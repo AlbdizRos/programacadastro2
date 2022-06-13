@@ -30,7 +30,7 @@
 	<div class="container mt-3">
 	
 		<h5>Edição de tarefa</h5>
-		<p>Utilize o formulário abaixo para atualizar os dados da produto.</p>
+		<p>Utilize o formulário abaixo para atualizar os dados do produto.</p>
 		<hr/>
 		
 		<form id="formEdicao" action="atualizar-produto" method="post">

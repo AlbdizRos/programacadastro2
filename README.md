@@ -10,3 +10,5 @@
 7. iText (Relatórios PDF)
  ## COTI INFORMATICA
 > Turma de JAVA WebDeveloper FullStack - Sábado Início em 12/02/2022
+
+> Segunda versão da aplicação (second commit) foi corrigido "erro" que impedia a edição dos produtos cadastrados.

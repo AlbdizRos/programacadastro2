@@ -9,6 +9,8 @@ public interface IProdutoRepository{
 	void create(Produto produto) throws Exception;
 
 	void update(Produto produto) throws Exception;
+	
+	void update(Integer idProduto, String senha) throws Exception;
 
 	void delete(Produto produto) throws Exception;
 

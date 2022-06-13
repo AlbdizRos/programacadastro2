@@ -51,7 +51,7 @@ public class ProdutoRepository implements IProdutoRepository {
 				statement.setString(1, produto.getNomeProduto());
 				statement.setInt(2, produto.getQuantidadeProduto());
 				statement.setDouble(3, produto.getPrecoProduto());
-				statement.setString(2, DateHelper.formatToString(produto.getDataValidade()));
+				statement.setString(4, DateHelper.formatToString(produto.getDataValidade()));
 				statement.setString(5, produto.getDescricaoProduto());
 				statement.setInt(6, produto.getIdProduto());
 				statement.setInt(7, produto.getIdUsuario());
@@ -62,6 +62,22 @@ public class ProdutoRepository implements IProdutoRepository {
 				connection.close();
 		
 	}
+	
+	@Override
+	public void update(Integer idUsuario, String senha) throws Exception {
+		
+		
+		Connection connection = ConnectionFactory.getConnection();
+		PreparedStatement statement = connection.prepareStatement
+		("update usuario set senha=md5(?) where idusuario=?");
+		statement.setString(1, senha);
+		statement.setInt(2, idUsuario);
+		statement.execute();
+		statement.close();
+		connection.close();
+		
+	}
+		
 
 	@Override
 	public void delete(Produto produto) throws Exception {
@@ -101,6 +117,8 @@ Connection connection = ConnectionFactory.getConnection();
 			
 			produto.setIdProduto(resultSet.getInt("idproduto"));
 			produto.setNomeProduto(resultSet.getString("nome"));
+			produto.setQuantidadeProduto(resultSet.getInt("quantidade"));
+			produto.setPrecoProduto(resultSet.getDouble("preco"));
 			produto.setDataValidade(DateHelper.formatToDate(resultSet.getString("datavalidade")));
 			produto.setDescricaoProduto(resultSet.getString("descricao"));
 			produto.setIdUsuario(resultSet.getInt("idusuario"));

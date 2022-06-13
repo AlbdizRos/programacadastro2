@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Sistema de Cadastro de Produtos</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -26,8 +26,11 @@
 		<div class="row mb-2">
 			<div class="col-md-12 text-end">
 				<div class="mt-2">
-					Usuário: <span style="font-weight: 500;">${usuario_auth.nome}</span>, E-mail: ${usuario_auth.email}
+					 <span style="font-weight: 500;">${usuario_auth.nome}</span> ${usuario_auth.email}
 					&nbsp;&nbsp;
+					<a href="/programacadastro2/minhaconta" class="btn btn-outline-primary btn-sm">
+						Minha Conta
+					</a>
 					<a href="/programacadastro2/logout" class="btn btn-danger btn-sm"
 						onclick="return confirm('Deseja realmente sair do sistema?');">
 						Sair do Sistema

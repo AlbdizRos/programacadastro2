@@ -33,7 +33,7 @@ try {
 			ProdutoRepository produtoRepository = new ProdutoRepository();
 			Produto produto= produtoRepository.findById(id);
 			
-			//verificando se a tarefa obtida pertence ao usuário
+			//verificando se a produto obtido pertence ao usuário
 			if(produto.getIdUsuario() == usuario.getIdUsuario()) {
 				
 				model.setIdProduto(produto.getIdProduto());
@@ -79,8 +79,8 @@ try {
 			produto.setIdUsuario(usuario.getIdUsuario());
 			
 			//atualizando no banco de dados
-			ProdutoRepository tarefaRepository = new ProdutoRepository();
-			tarefaRepository.update(produto);
+			ProdutoRepository produtoRepository = new ProdutoRepository();
+			produtoRepository.update(produto);
 			
 			modelAndView.addObject("mensagem_sucesso", "Produto atualizado com sucesso.");			
 		}

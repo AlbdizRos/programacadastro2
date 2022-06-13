@@ -9,6 +9,8 @@ public interface IUsuarioRepository {
 	void create(Usuario usuario) throws Exception;
 
 	void update(Usuario usuario) throws Exception;
+	
+	void update(Integer idUsuario, String senha) throws Exception;
 
 	void delete(Usuario usuario) throws Exception;
 
